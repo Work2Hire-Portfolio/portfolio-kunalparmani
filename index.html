@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kunal Parmani | Product Manager Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11182d;
+      --bg-card: rgba(255, 255, 255, 0.075);
+      --bg-card-strong: rgba(255, 255, 255, 0.11);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --muted-2: #94a3b8;
+      --gold: #d6b56d;
+      --gold-soft: rgba(214, 181, 109, 0.18);
+      --blue: #6ea8ff;
+      --green: #50d890;
+      --border: rgba(255, 255, 255, 0.13);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 181, 109, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(110, 168, 255, 0.17), transparent 35%),
+        linear-gradient(145deg, #070b16 0%, #0b1020 45%, #111827 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .premium-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.65;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 11, 22, 0.76);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold), #fff0ba);
+      color: #101827;
+      box-shadow: 0 14px 40px rgba(214, 181, 109, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid rgba(214, 181, 109, 0.38);
+      border-radius: 999px;
+      color: var(--gold);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 92px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-panel {
+      padding: 44px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045)),
+        radial-gradient(circle at top right, rgba(214,181,109,0.16), transparent 38%);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      right: -90px;
+      bottom: -120px;
+      background: rgba(110, 168, 255, 0.14);
+      filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      background: var(--gold-soft);
+      border: 1px solid rgba(214, 181, 109, 0.26);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(80, 216, 144, 0.12);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .hero-title-accent {
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-weight: 800;
+      transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #fff0ba);
+      color: #111827;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.07);
+      color: var(--text);
+    }
+
+    .profile-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-top {
+      padding: 32px;
+      background:
+        radial-gradient(circle at top left, rgba(214,181,109,0.24), transparent 42%),
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.045));
+    }
+
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #d6b56d, #6ea8ff);
+      display: grid;
+      place-items: center;
+      color: #08111f;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.28);
+    }
+
+    .profile-top h2 {
+      font-size: 1.65rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .profile-top p {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .profile-meta {
+      padding: 28px 32px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+    }
+
+    .meta-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .meta-label {
+      color: var(--muted-2);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .meta-value {
+      color: var(--text);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .section-note {
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat-card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+
+    .stat-number {
+      color: var(--gold);
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .about-card {
+      padding: 34px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.045));
+      box-shadow: var(--shadow);
+    }
+
+    .about-card p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 970px;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.075);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .skill-pill.featured {
+      background: var(--gold-soft);
+      color: var(--gold);
+      border-color: rgba(214, 181, 109, 0.25);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .timeline-card {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      padding: 30px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.2);
+    }
+
+    .timeline-date {
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .timeline-role {
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .timeline-company {
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .timeline-desc {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .achievement-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .achievement-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--muted);
+    }
+
+    .achievement-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      padding: 30px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 38%),
+        rgba(255,255,255,0.07);
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .stack span {
+      color: var(--muted);
+      background: rgba(255,255,255,0.075);
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .achievement-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.065);
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .education-card {
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .education-card h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .contact-panel {
+      padding: 44px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(214,181,109,0.22);
+      background:
+        linear-gradient(135deg, rgba(214,181,109,0.18), rgba(110,168,255,0.09)),
+        rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact-panel h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-link {
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-weight: 800;
+    }
+
+    .contact-link span {
+      color: var(--gold);
+    }
+
+    footer {
+      padding: 34px 0 46px;
+      color: var(--muted-2);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .contact-panel,
+      .timeline-card {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid,
+      .achievements-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-shell,
+      nav {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-panel,
+      .profile-top,
+      .profile-meta,
+      .about-card,
+      .timeline-card,
+      .project-card,
+      .contact-panel {
+        padding: 24px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meta-item,
+      .contact-link {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .meta-value {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="premium-glow"></div>
+
+  <header>
+    <nav>
+      <a href="#top" class="brand">
+        <span class="brand-mark">KP</span>
+        <span>Kunal Parmani</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Impact</a>
+        <a href="#contact" class="nav-cta">Connect</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="page-shell hero-grid">
+        <div class="hero-panel">
+          <div class="eyebrow"><span></span> Available for Product Leadership Opportunities</div>
+
+          <h1>
+            Product leader building
+            <span class="hero-title-accent">AI-led SaaS</span>
+            and retail intelligence platforms.
+          </h1>
+
+          <p class="hero-subtitle">
+            Product and growth leader building AI-led B2B SaaS, retail intelligence platforms,
+            and data-driven product solutions.
+          </p>
+
+          <p class="hero-subtitle">
+            Building data-driven products that convert business complexity into actionable insights.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/kunal-parmani-4240b6b4/" target="_blank" rel="noopener">
+              View LinkedIn
+            </a>
+            <a class="btn btn-secondary" href="#projects">
+              Explore Work
+            </a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="profile-top">
+            <div class="avatar">KP</div>
+            <h2>Kunal Parmani</h2>
+            <p>Co-Founder / COO at Datavio / Retail Intelligence Platform</p>
+          </div>
+
+          <div class="profile-meta">
+            <div class="meta-item">
+              <div class="meta-label">Target Role</div>
+              <div class="meta-value">Product Manager</div>
+            </div>
+
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-value">Bengaluru, India</div>
+            </div>
+
+            <div class="meta-item">
+              <div class="meta-label">Focus</div>
+              <div class="meta-value">B2B SaaS, Retail Intelligence, Analytics</div>
+            </div>
+
+            <div class="meta-item">
+              <div class="meta-label">Availability</div>
+              <div class="meta-value">Product, Strategy & Analytics Roles</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="page-shell stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Retail intelligence use cases roadmapped</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">40+</div>
+          <div class="stat-label">User research and stakeholder conversations</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Product improvements prioritized</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">ICP segments supported through GTM</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="page-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Executive Summary</div>
+            <h2 class="section-title">Product strategy, analytics, and GTM execution.</h2>
+          </div>
+          <p class="section-note">
+            A product-focused profile across AI-led SaaS, retail data, marketplace intelligence,
+            learner product improvement, and growth experimentation.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <p>
+            Kunal Parmani is a product-focused startup leader with experience across AI-led B2B SaaS,
+            retail intelligence, learner product improvement, growth strategy, go-to-market execution,
+            product analytics, and stakeholder management. He has worked on product strategy,
+            roadmapping, user research, requirements prioritization, marketplace intelligence,
+            BI reporting, and automation-led workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="page-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Capabilities</div>
+            <h2 class="section-title">Core skills and operating strengths.</h2>
+          </div>
+        </div>
+
+        <div class="skills-wrap">
+          <span class="skill-pill featured">Product Strategy</span>
+          <span class="skill-pill featured">Roadmapping</span>
+          <span class="skill-pill featured">User Research</span>
+          <span class="skill-pill featured">A/B Testing</span>
+          <span class="skill-pill featured">Metrics Definition</span>
+          <span class="skill-pill">Market Research</span>
+          <span class="skill-pill">Experimentation</span>
+          <span class="skill-pill">Requirements Prioritization</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Mixpanel</span>
+          <span class="skill-pill">Amplitude</span>
+          <span class="skill-pill">BI Reporting</span>
+          <span class="skill-pill">Product Dashboards</span>
+          <span class="skill-pill">Cognos</span>
+          <span class="skill-pill">Marketplace Intelligence Dashboards</span>
+          <span class="skill-pill">Marketplace Data</span>
+          <span class="skill-pill">Retail Data</span>
+          <span class="skill-pill">Supply-Chain Data</span>
+          <span class="skill-pill">Internal Business Data</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">Jira</span>
+          <span class="skill-pill">Confluence</span>
+          <span class="skill-pill">Go-to-Market</span>
+          <span class="skill-pill">Stakeholder Management</span>
+          <span class="skill-pill">PRDs</span>
+          <span class="skill-pill">Product-Market Fit</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="page-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Experience</div>
+            <h2 class="section-title">Leadership across product, SaaS, and growth.</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card">
+            <div>
+              <div class="timeline-date">02/2023 — Present</div>
+              <div class="meta-label">Bengaluru, India</div>
+            </div>
+
+            <div>
+              <h3 class="timeline-role">Co-Founder / COO</h3>
+              <div class="timeline-company">Datavio / Retail Intelligence Platform</div>
+              <p class="timeline-desc">
+                Builds product strategy and roadmapping for an AI-led B2B SaaS platform across
+                retail intelligence use cases, converting fragmented marketplace and internal data
+                into actionable product insights.
+              </p>
+
+              <ul class="achievement-list">
+                <li>Built product strategy and roadmap for 7 retail intelligence use cases.</li>
+                <li>Defined validated product requirements from 40+ user research and stakeholder management conversations.</li>
+                <li>Prioritized stock-out monitoring, pricing intelligence, category tracking, and demand planning outcomes.</li>
+                <li>Drove go-to-market execution across 3 ICP segments for retail, CPG, and supply-chain teams.</li>
+                <li>Aligned product, engineering, analytics, and growth workflows across a 5-member team using Jira-style prioritization, Confluence-ready PRDs, and metrics definition.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div>
+              <div class="timeline-date">06/2022 — 05/2023</div>
+              <div class="meta-label">Product Improvement</div>
+            </div>
+
+            <div>
+              <h3 class="timeline-role">Product Manager</h3>
+              <div class="timeline-company">Masai School / Learner Product Improvement</div>
+              <p class="timeline-desc">
+                Converted learner and business feedback into prioritized product improvements while
+                aligning cross-functional teams on roadmap priorities, delivery timelines, and
+                measurable user outcomes.
+              </p>
+
+              <ul class="achievement-list">
+                <li>Converted learner and business feedback into 12+ prioritized product improvements.</li>
+                <li>Measured product performance through funnel analysis, SQL-based reporting, and experimentation loops.</li>
+                <li>Improved stakeholder visibility into 3 core learner experience metrics.</li>
+                <li>Coordinated with 6 product, operations, and technology stakeholders.</li>
+                <li>Reduced delivery ambiguity by 25% through refined requirements prioritization.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div>
+              <div class="timeline-date">07/2018 — 03/2020</div>
+              <div class="meta-label">Growth & Expansion</div>
+            </div>
+
+            <div>
+              <h3 class="timeline-role">Growth Lead</h3>
+              <div class="timeline-company">Fancymonk / Growth and Market Expansion</div>
+              <p class="timeline-desc">
+                Executed go-to-market and acquisition initiatives across startup growth channels,
+                supporting founder-led sales, market research, and product-market fit validation.
+              </p>
+
+              <ul class="achievement-list">
+                <li>Executed go-to-market and acquisition initiatives across 2 startup growth channels.</li>
+                <li>Increased qualified customer conversations through founder-led sales and market research.</li>
+                <li>Segmented users across 4 customer cohorts to identify growth opportunities.</li>
+                <li>Validated product-market fit signals through customer and market insights.</li>
+                <li>Collaborated with founders and internal teams of 5+ members to convert customer communication into product insights and GTM actions.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="page-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Selected Work</div>
+            <h2 class="section-title">Product and analytics projects.</h2>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div>
+              <h3>Datavio / Retail Intelligence & Automation</h3>
+              <p>
+                Designed roadmapping and requirements prioritization for marketplace intelligence modules
+                covering price intelligence, competitor tracking, category insights, stock-out monitoring,
+                and visibility dashboards.
+              </p>
+            </div>
+
+            <div class="stack">
+              <span>Product Strategy</span>
+              <span>Roadmapping</span>
+              <span>Marketplace Intelligence</span>
+              <span>Metrics Definition</span>
+              <span>Cohort Analysis</span>
+              <span>A/B Testing</span>
+              <span>Product Analytics</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <h3>Analytics Foundation / Demand Forecasting and BI Reporting</h3>
+              <p>
+                Analyzed demand forecasting datasets using SQL, Python, and Cognos reporting across
+                business variables, translating insights into validated product requirements and
+                dashboard logic.
+              </p>
+            </div>
+
+            <div class="stack">
+              <span>SQL</span>
+              <span>Python</span>
+              <span>Cognos</span>
+              <span>BI Reporting</span>
+              <span>Demand Forecasting</span>
+              <span>Figma</span>
+              <span>Market Research</span>
+              <span>Product Analytics</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="page-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Impact</div>
+            <h2 class="section-title">Measured outcomes and product wins.</h2>
+          </div>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achievement-card">Built product strategy and roadmapping for an AI-led B2B SaaS platform across 7 retail intelligence use cases.</div>
+          <div class="achievement-card">Defined validated product requirements from 40+ user research and stakeholder management conversations.</div>
+          <div class="achievement-card">Drove go-to-market execution across 3 ICP segments including retail, CPG, and supply-chain teams.</div>
+          <div class="achievement-card">Converted learner and business feedback into 12+ prioritized product improvements.</div>
+          <div class="achievement-card">Reduced product delivery ambiguity by 25% through improved requirements prioritization.</div>
+          <div class="achievement-card">Designed marketplace intelligence modules for price intelligence, competitor tracking, category insights, stock-out monitoring, and visibility dashboards.</div>
+          <div class="achievement-card">Specified Mixpanel and Amplitude-style event tracking for 20+ product actions.</div>
+          <div class="achievement-card">Prioritized 8 analytics features using impact-effort scoring.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="page-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Education</div>
+            <h2 class="section-title">Academic foundation.</h2>
+          </div>
+        </div>
+
+        <div class="education-grid">
+          <article class="education-card">
+            <h3>Birla Institute of Technology and Science, Pilani</h3>
+            <p>Pilani, India</p>
+          </article>
+
+          <article class="education-card">
+            <h3>Springdales School</h3>
+            <p>Academic Foundation</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="page-shell">
+        <div class="contact-panel">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>Let’s build data-driven products.</h2>
+            <p>
+              Available for product management, product strategy, analytics, and B2B SaaS leadership opportunities.
+            </p>
+          </div>
+
+          <div class="contact-links">
+            <a class="contact-link" href="https://www.linkedin.com/in/kunal-parmani-4240b6b4/" target="_blank" rel="noopener">
+              LinkedIn <span>↗</span>
+            </a>
+
+            <div class="contact-link">
+              Location <span>Bengaluru, India</span>
+            </div>
+
+            <div class="contact-link">
+              Focus <span>Product, SaaS, Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Portfolio powered by Work2Hire
+  </footer>
+</body>
+</html>
